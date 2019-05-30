@@ -1,0 +1,17 @@
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  width: 100vw;
+  height: 100vh;
+  mat-card {
+    align-self: center;
+    padding: 20px;
+    mat-card-footer {
+      p {
+        margin: 10px;
+      }
+    }
+  }
+}
