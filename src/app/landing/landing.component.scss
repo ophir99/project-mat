@@ -8,6 +8,16 @@ main {
   mat-card {
     align-self: center;
     padding: 20px;
+    mat-card-content {
+      justify-content: center;
+      div {
+        display: flex;
+        width: 276px;
+        height: 264px;
+        justify-content: center;
+        align-items: center;
+      }
+    }
     mat-card-footer {
       p {
         margin: 10px;

@@ -8,17 +8,28 @@ import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import {
   MatCardModule,
   MatButtonModule,
-  MatInputModule
+  MatInputModule,
+  MatProgressSpinnerModule,
+  MatSnackBarModule,
+  MatToolbarModule
 } from "@angular/material";
+import { ReactiveFormsModule } from "@angular/forms";
+import { HttpClientModule } from "@angular/common/http";
+import { UserHomeComponent } from "./user-home/user-home.component";
 @NgModule({
-  declarations: [AppComponent, LandingComponent],
+  declarations: [AppComponent, LandingComponent, UserHomeComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     MatCardModule,
     MatButtonModule,
-    MatInputModule
+    MatInputModule,
+    ReactiveFormsModule,
+    HttpClientModule,
+    MatProgressSpinnerModule,
+    MatSnackBarModule,
+    MatToolbarModule
   ],
   providers: [],
   bootstrap: [AppComponent]

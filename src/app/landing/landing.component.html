@@ -45,22 +45,100 @@
       </p></mat-card-footer
     >
   </mat-card> -->
-  <mat-card>
-    <mat-card-title>
-      Create account here...
-    </mat-card-title>
-    <mat-card-content>
-      <mat-form-field>
-        <input type="text" matInput placeholder="Enter email" />
-      </mat-form-field>
-    </mat-card-content>
-    <mat-card-content>
-      <mat-form-field>
-        <input type="password" matInput placeholder="Enter password" />
-      </mat-form-field>
-    </mat-card-content>
-    <mat-card-actions>
-      <button mat-raised-button color="primary">Sign up</button>
-    </mat-card-actions>
+
+  <mat-card [formGroup]="signUpForm" *ngIf="!signInFormToggle">
+    <ng-container *ngIf="!showSpinner">
+      <mat-card-title>
+        Create account here...
+      </mat-card-title>
+      <mat-card-content>
+        <mat-form-field>
+          <input
+            type="text"
+            formControlName="email"
+            matInput
+            placeholder="Enter email"
+          />
+        </mat-form-field>
+      </mat-card-content>
+      <mat-card-content>
+        <mat-form-field>
+          <input
+            type="password"
+            formControlName="password"
+            matInput
+            placeholder="Enter password"
+          />
+        </mat-form-field>
+      </mat-card-content>
+      <mat-card-actions>
+        <button (click)="signUp()" mat-raised-button color="primary">
+          Sign up
+        </button>
+        <button (click)="toggleSignInForm()" mat-button color="primary">
+          Sign in
+        </button>
+      </mat-card-actions>
+    </ng-container>
+    <ng-container *ngIf="showSpinner">
+      <mat-card-content>
+        <div>
+          <mat-progress-spinner
+            [diameter]="50"
+            [mode]="'indeterminate'"
+          ></mat-progress-spinner>
+        </div>
+      </mat-card-content>
+    </ng-container>
+  </mat-card>
+  <mat-card [formGroup]="signInForm" *ngIf="signInFormToggle">
+    <ng-container *ngIf="!showSpinner">
+      <mat-card-title>
+        Log in here...
+      </mat-card-title>
+      <mat-card-content>
+        <mat-form-field>
+          <input
+            type="text"
+            formControlName="email"
+            matInput
+            placeholder="Enter email"
+          />
+        </mat-form-field>
+      </mat-card-content>
+      <mat-card-content>
+        <mat-form-field>
+          <input
+            type="password"
+            formControlName="password"
+            matInput
+            placeholder="Enter password"
+          />
+        </mat-form-field>
+      </mat-card-content>
+      <mat-card-actions>
+        <button (click)="signIn()" mat-raised-button color="primary">
+          Sign In
+        </button>
+        <button (click)="toggleSignInForm()" mat-button color="primary">
+          Sign up
+        </button>
+      </mat-card-actions>
+    </ng-container>
+    <ng-container *ngIf="showSpinner">
+      <mat-card-content>
+        <div>
+          <mat-progress-spinner
+            [diameter]="50"
+            [mode]="'indeterminate'"
+          ></mat-progress-spinner>
+        </div>
+      </mat-card-content>
+    </ng-container>
   </mat-card>
 </main>
+<p>
+  Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit culpa
+  dicta fuga sed, eum ipsa velit dolore incidunt, magnam libero adipisci sint
+  earum in tempora facilis nam repellat atque aut!
+</p>
