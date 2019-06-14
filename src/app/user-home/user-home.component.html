@@ -6,7 +6,7 @@
   Welcome to home page...
 </h1>
 
-<mat-card>
+<mat-card [style.width]="'500px'" [style.margin]="'10px'">
   <mat-card-content>
     <mat-form-field>
       <textarea
@@ -22,4 +22,10 @@
   <button mat-raised-button [color]="'accent'" (click)="createPost()">
     POST
   </button>
+</mat-card>
+
+<mat-card *ngFor="let post of posts">
+  <mat-card-content>
+    {{ post.text }}
+  </mat-card-content>
 </mat-card>

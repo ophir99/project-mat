@@ -10,9 +10,10 @@ import { PostService } from "../post.service";
 })
 export class UserHomeComponent implements OnInit {
   post: FormControl;
-
+  posts = [];
   constructor(private router: Router, private postService: PostService) {
     this.post = new FormControl("dhsjkdskjdhs");
+    this.getposts();
   }
 
   ngOnInit() {}
@@ -29,5 +30,12 @@ export class UserHomeComponent implements OnInit {
       },
       err => console.log(err)
     );
+  }
+
+  getposts() {
+    this.postService.get().subscribe((res: any) => {
+      this.posts = res.result.reverse();
+      console.log(this.posts);
+    });
   }
 }

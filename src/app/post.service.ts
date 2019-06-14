@@ -17,8 +17,16 @@ export class PostService {
       {
         headers: new HttpHeaders().set(
           "Authorization",
-          sessionStorage.getItem("USER_TOKEN") + "sasasas"
+          sessionStorage.getItem("USER_TOKEN")
         )
       }
     );
+
+  get = () =>
+    this.http.get(`${this.API}/all`, {
+      headers: new HttpHeaders().set(
+        "authorization",
+        sessionStorage.getItem("USER_TOKEN")
+      )
+    });
 }
